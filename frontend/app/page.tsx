@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence, useInView } from "framer-motion";
@@ -259,7 +260,7 @@ const ConsolePanel: React.FC = () => {
           <div className="grid grid-cols-2 gap-3">
             <div className="bg-[#0a0b10] border border-white/[0.06] rounded-xl p-4">
               <h4 className="text-[13px] font-semibold text-neutral-200 mb-1">
-                ForgeAI Orchestrator
+                Nexora Orchestrator
               </h4>
               <div className="flex items-center gap-1.5">
                 <motion.div
@@ -397,7 +398,7 @@ const ChatInputBar: React.FC = () => {
           <div className="px-5 py-4">
             <input
               type="text"
-              placeholder="Message ForgeAI Agent..."
+              placeholder="Message Nexora Agent..."
               className="w-full bg-transparent text-[15px] text-neutral-200 placeholder-neutral-600 outline-none"
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -692,11 +693,9 @@ export default function LandingPage() {
       {/* ──────────────── NAV ──────────────── */}
       <nav className="fixed top-0 inset-x-0 z-50 h-14 flex items-center justify-between px-6 bg-[#08090a]/70 backdrop-blur-xl border-b border-white/[0.04]">
         <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-emerald-600 to-emerald-500 border border-emerald-400/20 flex items-center justify-center shadow-lg shadow-emerald-500/10">
-            <span className="text-[11px] font-bold text-white">F</span>
-          </div>
+          <Image src="/nexora-logo.png" alt="Nexora" width={28} height={28} className="rounded-lg" />
           <span className="text-sm font-bold tracking-tight text-neutral-200">
-            FORGEAI
+            NEXORA
           </span>
         </div>
 
@@ -730,6 +729,12 @@ export default function LandingPage() {
 
       {/* ──────────────── HERO — SPLIT ──────────────── */}
       <section className="relative min-h-screen flex items-center pt-14">
+        {/* Nexora background logo */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+          <div className="relative w-[700px] h-[700px] opacity-[0.06]">
+            <Image src="/nexora-logo.jpg" alt="" fill className="object-contain" />
+          </div>
+        </div>
         {/* Ambient washes */}
         <div className="absolute top-10 left-[10%] w-[500px] h-[400px] bg-emerald-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute top-32 right-[15%] w-[400px] h-[300px] bg-emerald-600/[0.02] rounded-full blur-[100px] pointer-events-none" />
@@ -816,7 +821,7 @@ export default function LandingPage() {
               Built for scale, designed for simplicity.
             </h2>
             <p className="mt-3 text-neutral-500 max-w-xl mx-auto text-[15px]">
-              ForgeAI provides the enterprise infrastructure for self-improving
+              Nexora provides the enterprise infrastructure for self-improving
               agent workflows, observable execution, and human oversight.
             </p>
           </Reveal>
@@ -877,11 +882,9 @@ export default function LandingPage() {
             {/* Brand column */}
             <div className="col-span-2 md:col-span-1">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-emerald-600 to-emerald-500 border border-emerald-400/20 flex items-center justify-center">
-                  <span className="text-[11px] font-bold text-white">F</span>
-                </div>
+                <Image src="/nexora-logo.png" alt="Nexora" width={28} height={28} className="rounded-lg" />
                 <span className="text-sm font-bold tracking-tight text-neutral-200">
-                  FORGEAI
+                  NEXORA
                 </span>
               </div>
               <p className="text-[12px] text-neutral-500 leading-relaxed mb-4 max-w-[220px]">
@@ -980,7 +983,7 @@ export default function LandingPage() {
         <div className="border-t border-white/[0.04] px-6 py-5">
           <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
             <span className="text-[12px] text-neutral-600">
-              © 2026 ForgeAI. All rights reserved. Built for Zenith Hackathon — AE-03.
+              © 2026 Nexora. All rights reserved. Built for Zenith Hackathon — AE-03.
             </span>
             <span className="text-[12px] text-neutral-600">
               Powered by{" "}

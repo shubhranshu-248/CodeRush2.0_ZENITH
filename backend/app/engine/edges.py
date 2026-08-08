@@ -1,4 +1,4 @@
-"""Conditional edge functions for the ForgeAI execution graph.
+"""Conditional edge functions for the Nexora execution graph.
 
 The current graph topology uses static edges with two parallel researcher
 nodes (researcher_a, researcher_b) rather than dynamic ``Send`` fan-out.

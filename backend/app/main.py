@@ -53,7 +53,7 @@ async def lifespan(app: FastAPI):
         )
 
     logger.info(
-        "ForgeAI v{version} starting on {host}:{port} | model={model}",
+        "Nexora v{version} starting on {host}:{port} | model={model}",
         version=settings.app_version,
         host=settings.host,
         port=settings.port,
@@ -62,7 +62,7 @@ async def lifespan(app: FastAPI):
 
     yield
 
-    logger.info("ForgeAI shutting down")
+    logger.info("Nexora shutting down")
     await engine.dispose()
 
 
@@ -71,7 +71,7 @@ def create_app() -> FastAPI:
     settings = get_settings()
 
     app = FastAPI(
-        title="ForgeAI API",
+        title="Nexora API",
         description="AI Workflow Orchestration Platform",
         version=settings.app_version,
         default_response_class=ORJSONResponse,

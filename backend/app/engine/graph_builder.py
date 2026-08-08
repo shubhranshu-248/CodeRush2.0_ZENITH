@@ -1,4 +1,4 @@
-"""Build and compile the ForgeAI LangGraph StateGraph."""
+"""Build and compile the Nexora LangGraph StateGraph."""
 
 from __future__ import annotations
 

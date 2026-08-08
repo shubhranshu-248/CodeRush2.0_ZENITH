@@ -110,7 +110,7 @@ function WorkspaceContent() {
           .replace(/\n/g, "<br/>");
 
         printWindow.document.write(`<!DOCTYPE html>
-<html><head><title>ForgeAI Report</title>
+<html><head><title>Nexora Report</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -127,7 +127,7 @@ function WorkspaceContent() {
   .date { font-size: 11px; color: #9ca3af; }
   @media print { body { padding: 32px; } .no-print { display: none; } }
 </style></head><body>
-<div class="header"><span class="brand">ForgeAI Report</span><span class="date">${new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span></div>
+<div class="header"><span class="brand">Nexora Report</span><span class="date">${new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span></div>
 <p>${htmlContent}</p>
 <script>window.onload = function() { window.print(); }</script>
 </body></html>`);
@@ -138,7 +138,7 @@ function WorkspaceContent() {
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = "forgeai-report.md";
+        a.download = "nexora-report.md";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);

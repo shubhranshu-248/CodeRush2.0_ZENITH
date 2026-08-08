@@ -1,6 +1,6 @@
-# ForgeAI — AI Workflow Orchestration Platform
+# Nexora — AI Workflow Orchestration Platform
 
-ForgeAI is a full-stack AI workflow orchestration platform that decomposes any user goal into a multi-agent execution pipeline — planning, parallel research, writing, verification, and human approval — with real-time visual feedback. Built for the **Advanced Agentic Systems Challenge (AE-03)**.
+Nexora is a full-stack AI workflow orchestration platform that decomposes any user goal into a multi-agent execution pipeline — planning, parallel research, writing, verification, and human approval — with real-time visual feedback. Built for the **Advanced Agentic Systems Challenge (AE-03)**.
 
 ## How It Works
 
@@ -210,7 +210,7 @@ All configuration is via environment variables (or `backend/.env`):
 | `DEFAULT_MODEL` | `llama-3.3-70b-versatile` | LLM model to use |
 | `DEFAULT_TEMPERATURE` | `0.7` | LLM temperature |
 | `DEFAULT_MAX_TOKENS` | `8192` | Max output tokens |
-| `DATABASE_URL` | `sqlite+aiosqlite:///data/forgeai.db` | Database connection string |
+| `DATABASE_URL` | `sqlite+aiosqlite:///data/nexora.db` | Database connection string |
 | `CORS_ORIGINS` | `["http://localhost:3000"]` | Allowed CORS origins |
 | `LOG_LEVEL` | `INFO` | Logging level |
 
@@ -220,7 +220,7 @@ All configuration is via environment variables (or `backend/.env`):
 
 **Problem Statement:** Build a platform that orchestrates multiple AI agents through complex, multi-step workflows with real-time observability, human oversight, and exportable deliverables.
 
-**Approach:** Rather than a simple chain, ForgeAI implements a true directed acyclic graph with parallel branches, state reducers for conflict-free merges, checkpoint-based interrupts for human approval, and streaming observability — demonstrating production-grade agentic system design.
+**Approach:** Rather than a simple chain, Nexora implements a true directed acyclic graph with parallel branches, state reducers for conflict-free merges, checkpoint-based interrupts for human approval, and streaming observability — demonstrating production-grade agentic system design.
 
 ## License
 

@@ -12,7 +12,7 @@ export interface DemoStep {
   nodes: Array<{ id: string; duration: number }>;
 }
 
-/** Default ForgeAI demo pipeline */
+/** Default Nexora demo pipeline */
 export const DEFAULT_DEMO_STEPS: DemoStep[] = [
   { nodes: [{ id: "1", duration: 800 }] },                          // Planner
   { nodes: [{ id: "2", duration: 1400 }, { id: "3", duration: 1400 }] }, // Research A + B parallel

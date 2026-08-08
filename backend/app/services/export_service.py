@@ -154,7 +154,7 @@ class ExportService:
     ) -> str:
         lines: list[str] = []
 
-        lines.append("FORGEAI EXECUTION REPORT")
+        lines.append("NEXORA EXECUTION REPORT")
         lines.append("=" * 40)
         lines.append("")
 

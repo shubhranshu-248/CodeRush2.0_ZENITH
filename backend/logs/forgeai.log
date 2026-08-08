@@ -332,3 +332,37 @@ Read Email
 2026-08-08 08:34:28.793 | INFO     | 98583235 | app.services.execution_service:_run_graph:350 - Execution 1a825380-7b11-4160-8542-d263a22d8611 completed in 19258ms
 2026-08-08 08:34:31.463 | INFO     | 0ebf4062 | app.services.export_service:export_run:43 - Exporting run 1a825380-7b11-4160-8542-d263a22d8611 as MARKDOWN
 2026-08-08 08:34:38.694 | INFO     | 1534cbcd | app.services.export_service:export_run:43 - Exporting run 1a825380-7b11-4160-8542-d263a22d8611 as MARKDOWN
+2026-08-08 08:44:53.837 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:44:55.008 | INFO     |        - | app.main:lifespan:49 - Groq API key loaded: gsk_0s...uBec
+2026-08-08 08:44:55.008 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:44:59.029 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:44:59.964 | INFO     |        - | app.main:lifespan:49 - Groq API key loaded: gsk_0s...uBec
+2026-08-08 08:44:59.964 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:45:04.530 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:45:05.461 | INFO     |        - | app.main:lifespan:49 - Groq API key loaded: gsk_0s...uBec
+2026-08-08 08:45:05.461 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:45:08.621 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:45:09.561 | INFO     |        - | app.main:lifespan:49 - Groq API key loaded: gsk_0s...uBec
+2026-08-08 08:45:09.561 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:45:12.926 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:45:13.839 | INFO     |        - | app.main:lifespan:49 - Groq API key loaded: gsk_0s...uBec
+2026-08-08 08:45:13.839 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:45:17.421 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:45:18.372 | INFO     |        - | app.main:lifespan:49 - Groq API key loaded: gsk_0s...uBec
+2026-08-08 08:45:18.372 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:45:22.602 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:45:23.513 | INFO     |        - | app.main:lifespan:49 - Groq API key loaded: gsk_0s...uBec
+2026-08-08 08:45:23.513 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:45:27.432 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:45:28.335 | INFO     |        - | app.main:lifespan:49 - Groq API key loaded: gsk_0s...uBec
+2026-08-08 08:45:28.335 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:45:31.487 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:45:32.428 | INFO     |        - | app.main:lifespan:49 - Groq API key loaded: gsk_0s...uBec
+2026-08-08 08:45:32.428 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:45:36.221 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:45:37.140 | INFO     |        - | app.main:lifespan:49 - Groq API key loaded: gsk_0s...uBec
+2026-08-08 08:45:37.140 | INFO     |        - | app.main:lifespan:55 - Nexora v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:45:41.478 | INFO     |        - | app.main:lifespan:65 - Nexora shutting down
+2026-08-08 08:45:42.390 | INFO     |        - | app.main:lifespan:49 - Groq API key loaded: gsk_0s...uBec
+2026-08-08 08:45:42.391 | INFO     |        - | app.main:lifespan:55 - Nexora v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:45:45.337 | INFO     |        - | app.main:lifespan:65 - Nexora shutting down

@@ -3,8 +3,12 @@ import "./globals.css";
 import { ToastWrapper } from "@/components/ui/toast-wrapper";
 
 export const metadata: Metadata = {
-  title: "ForgeAI - Unified Agent Workflow Orchestrator",
+  title: "Nexora - Unified Agent Workflow Orchestrator",
   description: "Convert natural language goals into editable, observable, replayable multi-agent workflows.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/nexora-logo.png",
+  },
 };
 
 export default function RootLayout({

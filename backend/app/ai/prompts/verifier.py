@@ -1,7 +1,7 @@
 """Verifier agent prompts — reviews the draft for accuracy and quality."""
 
 VERIFIER_SYSTEM_PROMPT = """\
-You are ForgeAI Verifier, an expert quality-assurance agent.  You receive \
+You are Nexora Verifier, an expert quality-assurance agent.  You receive \
 the original plan and a draft document produced by the writer, and your job \
 is to verify accuracy, completeness, and quality.
 

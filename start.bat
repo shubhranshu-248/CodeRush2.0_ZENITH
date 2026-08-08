@@ -1,6 +1,6 @@
 @echo off
 echo ============================================
-echo   ForgeAI - Starting Backend + Frontend
+echo   Nexora - Starting Backend + Frontend
 echo ============================================
 echo.
 
@@ -9,7 +9,7 @@ echo [1/2] Starting backend server...
 cd backend
 if not exist "data" mkdir data
 if not exist "logs" mkdir logs
-start "ForgeAI Backend" cmd /c "pip install -e . && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+start "Nexora Backend" cmd /c "pip install -e . && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
 cd ..
 
 :: Wait for backend to start
@@ -19,7 +19,7 @@ timeout /t 5 /nobreak >nul
 :: Start frontend
 echo [2/2] Starting frontend...
 cd frontend
-start "ForgeAI Frontend" cmd /c "npm install && npm run dev"
+start "Nexora Frontend" cmd /c "npm install && npm run dev"
 cd ..
 
 echo.

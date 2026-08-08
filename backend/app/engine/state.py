@@ -1,4 +1,4 @@
-"""LangGraph state definition for the ForgeAI execution graph."""
+"""LangGraph state definition for the Nexora execution graph."""
 
 from __future__ import annotations
 

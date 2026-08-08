@@ -9,13 +9,13 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     """Application settings loaded from environment variables and .env file."""
 
-    app_name: str = "ForgeAI"
+    app_name: str = "Nexora"
     app_version: str = "1.0.0"
     debug: bool = False
     host: str = "0.0.0.0"
     port: int = 8000
 
-    database_url: str = "sqlite+aiosqlite:///data/forgeai.db"
+    database_url: str = "sqlite+aiosqlite:///data/nexora.db"
 
     # Accepts GROQ_API_KEY (primary) or GOOGLE_API_KEY / GEMINI_API_KEY (legacy)
     groq_api_key: str = Field(

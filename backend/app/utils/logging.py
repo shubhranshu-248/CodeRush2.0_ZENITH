@@ -40,7 +40,7 @@ def setup_logging(settings: Settings) -> None:
 
     # Add rotating file handler
     logger.add(
-        str(log_dir / "forgeai.log"),
+        str(log_dir / "nexora.log"),
         format=log_format,
         level=settings.log_level,
         rotation="10 MB",

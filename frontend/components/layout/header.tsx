@@ -60,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           <div>
             <div className="flex items-center space-x-2">
-              <h1 className="text-sm font-bold text-gray-100 tracking-tight group-hover:text-indigo-300 transition-colors">ForgeAI</h1>
+              <h1 className="text-sm font-bold text-gray-100 tracking-tight group-hover:text-indigo-300 transition-colors">Nexora</h1>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={isRunning ? "running" : "idle"}

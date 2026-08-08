@@ -1,4 +1,4 @@
-# ForgeAI Backend — Architecture Document
+# Nexora Backend — Architecture Document
 
 > **Status**: PENDING APPROVAL  
 > **Author**: Principal Software Architect  
@@ -196,7 +196,7 @@ All Pydantic v2 models with `model_config = ConfigDict(from_attributes=True)` fo
 Orchestrates between repositories, the LangGraph engine, and the event bus. Services are stateless classes injected via FastAPI's `Depends()`.
 
 ### 3.4 `app/engine/` — LangGraph Orchestration
-The heart of ForgeAI. Builds and compiles a `StateGraph`, defines nodes and edges, manages checkpointing and human-in-the-loop interrupts. Each node module is a self-contained async function that receives state and returns state updates.
+The heart of Nexora. Builds and compiles a `StateGraph`, defines nodes and edges, manages checkpointing and human-in-the-loop interrupts. Each node module is a self-contained async function that receives state and returns state updates.
 
 ### 3.5 `app/ai/` — Provider Abstraction
 A `BaseLLMProvider` abstract class with a single concrete implementation (`GeminiProvider`) using `langchain-google-genai`'s `ChatGoogleGenerativeAI`. The `ProviderRegistry` selects providers by name, enabling future OpenAI/Anthropic support with zero changes to business logic.
@@ -489,32 +489,32 @@ Each event uses named SSE events matching the `EventType` enum so the frontend's
 ### 8.1 Exception Hierarchy
 
 ```python
-class ForgeAIError(Exception):
-    """Base exception for all ForgeAI errors."""
+class NexoraError(Exception):
+    """Base exception for all Nexora errors."""
     status_code: int = 500
 
-class NotFoundError(ForgeAIError):
+class NotFoundError(NexoraError):
     status_code = 404
 
-class ValidationError(ForgeAIError):
+class ValidationError(NexoraError):
     status_code = 422
 
-class ConflictError(ForgeAIError):
+class ConflictError(NexoraError):
     status_code = 409
 
-class AIProviderError(ForgeAIError):
+class AIProviderError(NexoraError):
     status_code = 502
 
-class RateLimitError(ForgeAIError):
+class RateLimitError(NexoraError):
     status_code = 429
 
-class ApprovalTimeoutError(ForgeAIError):
+class ApprovalTimeoutError(NexoraError):
     status_code = 408
 ```
 
 ### 8.2 Centralized Handler
 
-A FastAPI exception handler middleware catches all `ForgeAIError` subclasses and returns consistent JSON:
+A FastAPI exception handler middleware catches all `NexoraError` subclasses and returns consistent JSON:
 
 ```json
 {
@@ -539,7 +539,7 @@ If an agent node fails (AI provider error, timeout, etc.), the error is captured
 from loguru import logger
 
 logger.add(
-    "logs/forgeai_{time}.log",
+    "logs/nexora_{time}.log",
     rotation="10 MB",
     retention="7 days",
     format="{time:YYYY-MM-DD HH:mm:ss.SSS} | {level:<8} | {extra[request_id]} | {name}:{function}:{line} | {message}",
@@ -570,14 +570,14 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
     # Application
-    app_name: str = "ForgeAI"
+    app_name: str = "Nexora"
     app_version: str = "1.0.0"
     debug: bool = False
     host: str = "0.0.0.0"
     port: int = 8000
 
     # Database
-    database_url: str = "sqlite+aiosqlite:///data/forgeai.db"
+    database_url: str = "sqlite+aiosqlite:///data/nexora.db"
 
     # AI Providers
     google_api_key: str              # Required — no default
@@ -603,7 +603,7 @@ class Settings(BaseSettings):
 
 ```env
 GOOGLE_API_KEY=your-gemini-api-key-here
-DATABASE_URL=sqlite+aiosqlite:///data/forgeai.db
+DATABASE_URL=sqlite+aiosqlite:///data/nexora.db
 CHECKPOINT_DB_PATH=data/checkpoints.db
 DEBUG=false
 CORS_ORIGINS=["http://localhost:3000"]
@@ -754,7 +754,7 @@ slowapi = ">=0.1"
 
 | Decision | Rationale |
 |----------|-----------|
-| **LangGraph over raw LangChain chains** | First-class support for stateful graphs, checkpointing, parallel branches, and human-in-the-loop interrupts — exactly what ForgeAI needs |
+| **LangGraph over raw LangChain chains** | First-class support for stateful graphs, checkpointing, parallel branches, and human-in-the-loop interrupts — exactly what Nexora needs |
 | **`langchain-google-genai` (not raw SDK)** | Provides `ChatGoogleGenerativeAI` compatible with LangGraph's `RunnableLambda` / node patterns; structured output via `.with_structured_output()` |
 | **Gemini 2.5 Flash as default** | Free tier, fast inference, sufficient quality for all agent tasks, generous rate limits (30 RPM free) |
 | **SQLite + async (aiosqlite)** | Zero-config for hackathon; async driver prevents blocking; PostgreSQL migration is a DSN change |

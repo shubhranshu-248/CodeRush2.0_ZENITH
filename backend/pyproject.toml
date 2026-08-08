@@ -1,7 +1,7 @@
 [project]
-name = "forgeai-backend"
+name = "nexora-backend"
 version = "1.0.0"
-description = "ForgeAI - AI Workflow Orchestration Platform"
+description = "Nexora - AI Workflow Orchestration Platform"
 requires-python = ">=3.10"
 dependencies = [
     "fastapi>=0.115",

@@ -250,7 +250,7 @@ export default function DashboardPage() {
             </motion.div>
             <div>
               <div className="flex items-center space-x-2">
-                <h1 className="text-sm font-bold text-gray-100 tracking-tight">ForgeAI</h1>
+                <h1 className="text-sm font-bold text-gray-100 tracking-tight">Nexora</h1>
                 <Badge variant="info" showDot={false} className="py-0 text-[10px]">
                   <LayoutDashboard className="w-2.5 h-2.5" />
                   Dashboard
