@@ -1,0 +1,241 @@
+2026-08-07 23:48:38.459 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-07 23:49:59.939 | INFO     | 04585894 | app.services.execution_service:start_execution:59 - Starting execution for goal: Research Agentic AI architecture & synthesize technical report
+2026-08-07 23:49:59.940 | INFO     | 04585894 | app.services.workflow_service:generate_workflow:31 - Generating workflow for goal: Research Agentic AI architecture & synthesize technical report
+2026-08-07 23:50:01.905 | ERROR    | 04585894 | app.services.execution_service:_run_graph:319 - Execution bf538005-ff30-4102-8ae5-e76ec3092fd3 failed: At key 'current_step': Can receive only one value per step. Use an Annotated key to handle multiple values.
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/INVALID_CONCURRENT_GRAPH_UPDATE
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 332
+               │     └ 3
+               └ <function _main at 0x0000019D5C6C8930>
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\multiprocessing\spawn.py", line 135, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 332
+           │    └ <function BaseProcess._bootstrap at 0x0000019D5C593A00>
+           └ <SpawnProcess name='SpawnProcess-1' parent=5300 started>
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\multiprocessing\process.py", line 320, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x0000019D5C592DA0>
+    └ <SpawnProcess name='SpawnProcess-1' parent=5300 started>
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x0000019D5EB801A0>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-1' parent=5300 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-1' parent=5300 started>
+    │    └ <function subprocess_started at 0x0000019D5E93E140>
+    └ <SpawnProcess name='SpawnProcess-1' parent=5300 started>
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=588, family=2, type=1, proto=6, laddr=('0.0.0.0', 8000)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x0000019D5EB802F0>>
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\site-packages\uvicorn\server.py", line 77, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           │           │    │             │                      │    │      └ <function Config.get_loop_factory at 0x0000019D5E762090>
+           │           │    │             │                      │    └ <uvicorn.config.Config object at 0x0000019D5EB801A0>
+           │           │    │             │                      └ <uvicorn.server.Server object at 0x0000019D5EB802F0>
+           │           │    │             └ [<socket.socket fd=588, family=2, type=1, proto=6, laddr=('0.0.0.0', 8000)>]
+           │           │    └ <function Server.serve at 0x0000019D5E911380>
+           │           └ <uvicorn.server.Server object at 0x0000019D5EB802F0>
+           └ <function run at 0x0000019D5E5800F0>
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 205, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x0000019D5EACD7B0>
+           │      └ <function Runner.run at 0x0000019D5E580510>
+           └ <asyncio.runners.Runner object at 0x0000019D5EB81160>
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 128, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\site-p...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000019D5E5649E0>
+           │    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000019D5EB81160>
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x0000019D5E564930>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000019D5E566A30>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 2056, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000019D5CD0F060>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+> File "E:\Projects\CodeRush2.0_ZENITH\backend\app\services\execution_service.py", line 224, in _run_graph
+    result = await graph.ainvoke(initial_state, config=config)
+                   │     │       │                     └ {'configurable': {'thread_id': 'bf538005-ff30-4102-8ae5-e76ec3092fd3'}}
+                   │     │       └ {'goal': 'Research Agentic AI architecture & synthesize technical report', 'execution_id': 'bf538005-ff30-4102-8ae5-e76ec3092...
+                   │     └ <function Pregel.ainvoke at 0x0000019D63C9A400>
+                   └ <langgraph.graph.state.CompiledStateGraph object at 0x0000019D63D77CB0>
+
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\site-packages\langgraph\pregel\main.py", line 4090, in ainvoke
+    async for chunk in self.astream(
+              │        │    └ <function Pregel.astream at 0x0000019D63C989E0>
+              │        └ <langgraph.graph.state.CompiledStateGraph object at 0x0000019D63D77CB0>
+              └ ('updates', {'researcher_a': {'research_results': [{'task_id': 'task_1', 'findings': 'Mock research findings for: Research ba...
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\site-packages\langgraph\pregel\main.py", line 3458, in astream
+    loop.after_tick()
+    │    └ <function PregelLoop.after_tick at 0x0000019D63C219B0>
+    └ <langgraph.pregel._loop.AsyncPregelLoop object at 0x0000019D64E49BE0>
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\site-packages\langgraph\pregel\_loop.py", line 692, in after_tick
+    self.updated_channels = apply_writes(
+    │    │                  └ <function apply_writes at 0x0000019D63BE2A30>
+    │    └ {'branch:to:researcher_b', 'metadata', 'plan', 'branch:to:researcher_a', 'current_step', 'node_outputs'}
+    └ <langgraph.pregel._loop.AsyncPregelLoop object at 0x0000019D64E49BE0>
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\site-packages\langgraph\pregel\_algo.py", line 319, in apply_writes
+    if channels[chan].update(vals) and next_version is not None:
+       │        │            │         └ '00000000000000000000000000000004.0.4605476017991217'
+       │        │            └ [2, 3]
+       │        └ 'current_step'
+       └ {'goal': <langgraph.channels.last_value.LastValue object at 0x0000019D64EAC680>, 'plan': <langgraph.channels.last_value.LastV...
+  File "C:\Users\shubh\AppData\Local\Programs\Python\Python314\Lib\site-packages\langgraph\channels\last_value.py", line 64, in update
+    raise InvalidUpdateError(msg)
+          │                  └ "At key 'current_step': Can receive only one value per step. Use an Annotated key to handle multiple values.\nFor troubleshoo...
+          └ <class 'langgraph.errors.InvalidUpdateError'>
+
+langgraph.errors.InvalidUpdateError: At key 'current_step': Can receive only one value per step. Use an Annotated key to handle multiple values.
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/INVALID_CONCURRENT_GRAPH_UPDATE
+2026-08-07 23:52:46.827 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-07 23:52:48.086 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-07 23:52:56.346 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-07 23:52:57.435 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-07 23:53:04.166 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-07 23:53:05.165 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:00:08.631 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 00:00:09.699 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:00:52.627 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 00:00:53.742 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:00:59.177 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 00:01:00.265 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:01:07.677 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 00:01:08.756 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:01:30.950 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 00:01:31.999 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:01:36.236 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 00:01:37.328 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:01:44.820 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 00:01:45.914 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:03:33.472 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 00:03:34.560 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:03:54.352 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 00:03:55.450 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:03:59.150 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 00:04:00.243 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:17:20.637 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:19:30.262 | INFO     | 98b1cc93 | app.services.execution_service:start_execution:59 - Starting execution for goal: Research Agentic AI architecture & synthesize technical report
+2026-08-08 00:19:30.262 | INFO     | 98b1cc93 | app.services.workflow_service:generate_workflow:31 - Generating workflow for goal: Research Agentic AI architecture & synthesize technical report
+2026-08-08 00:21:05.896 | INFO     | 233fd549 | app.services.approval_service:submit_approval:50 - Approval submitted for 53c85b7c-e03d-4535-93a5-8357c905f94e: approved=True, feedback=''
+2026-08-08 00:21:05.906 | INFO     | 233fd549 | app.services.execution_service:resume_after_approval:156 - Approval received for 53c85b7c-e03d-4535-93a5-8357c905f94e: approved=True
+2026-08-08 00:21:05.941 | INFO     | 98b1cc93 | app.services.execution_service:_run_graph:350 - Execution 53c85b7c-e03d-4535-93a5-8357c905f94e completed in 95335ms
+2026-08-08 00:21:53.193 | INFO     | db68ab2a | app.services.export_service:export_run:43 - Exporting run 53c85b7c-e03d-4535-93a5-8357c905f94e as MARKDOWN
+2026-08-08 00:22:12.813 | INFO     | eeee5b7a | app.services.export_service:export_run:43 - Exporting run 53c85b7c-e03d-4535-93a5-8357c905f94e as PDF
+2026-08-08 00:22:18.485 | INFO     | 98374cf4 | app.services.export_service:export_run:43 - Exporting run 53c85b7c-e03d-4535-93a5-8357c905f94e as PDF
+2026-08-08 00:22:26.997 | INFO     | 200e07a6 | app.services.export_service:export_run:43 - Exporting run 53c85b7c-e03d-4535-93a5-8357c905f94e as MARKDOWN
+2026-08-08 00:22:28.085 | INFO     | af719343 | app.services.export_service:export_run:43 - Exporting run 53c85b7c-e03d-4535-93a5-8357c905f94e as MARKDOWN
+2026-08-08 00:22:28.698 | INFO     | 5446a6e4 | app.services.export_service:export_run:43 - Exporting run 53c85b7c-e03d-4535-93a5-8357c905f94e as MARKDOWN
+2026-08-08 00:25:42.506 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:26:51.118 | INFO     | f2d98e8c | app.services.execution_service:start_execution:59 - Starting execution for goal: Audit system performance & recommend scalability optimizations
+2026-08-08 00:26:51.119 | INFO     | f2d98e8c | app.services.workflow_service:generate_workflow:31 - Generating workflow for goal: Audit system performance & recommend scalability optimizations
+2026-08-08 00:27:23.441 | INFO     | c8fe4b8d | app.services.approval_service:submit_approval:50 - Approval submitted for 35195f55-f08c-46e7-b72b-3ace50f89bb2: approved=True, feedback=''
+2026-08-08 00:27:23.452 | INFO     | c8fe4b8d | app.services.execution_service:resume_after_approval:156 - Approval received for 35195f55-f08c-46e7-b72b-3ace50f89bb2: approved=True
+2026-08-08 00:27:23.487 | INFO     | f2d98e8c | app.services.execution_service:_run_graph:350 - Execution 35195f55-f08c-46e7-b72b-3ace50f89bb2 completed in 32000ms
+2026-08-08 00:27:38.642 | INFO     | 122a9c1d | app.services.export_service:export_run:43 - Exporting run 35195f55-f08c-46e7-b72b-3ace50f89bb2 as MARKDOWN
+2026-08-08 00:27:48.734 | INFO     | 0975ddf7 | app.services.export_service:export_run:43 - Exporting run 35195f55-f08c-46e7-b72b-3ace50f89bb2 as PDF
+2026-08-08 00:29:38.056 | INFO     | 059f1681 | app.services.execution_service:start_execution:59 - Starting execution for goal: build a study planner for me
+2026-08-08 00:29:38.056 | INFO     | 059f1681 | app.services.workflow_service:generate_workflow:31 - Generating workflow for goal: build a study planner for me
+2026-08-08 00:30:17.782 | INFO     | 4edf883f | app.services.approval_service:submit_approval:50 - Approval submitted for c65977ae-5a5c-4d1a-a7c9-315233920dbb: approved=True, feedback=''
+2026-08-08 00:30:17.802 | INFO     | 4edf883f | app.services.execution_service:resume_after_approval:156 - Approval received for c65977ae-5a5c-4d1a-a7c9-315233920dbb: approved=True
+2026-08-08 00:30:17.876 | INFO     | 059f1681 | app.services.execution_service:_run_graph:350 - Execution c65977ae-5a5c-4d1a-a7c9-315233920dbb completed in 39453ms
+2026-08-08 00:30:21.638 | INFO     | 2bcd7263 | app.services.export_service:export_run:43 - Exporting run c65977ae-5a5c-4d1a-a7c9-315233920dbb as MARKDOWN
+2026-08-08 00:30:30.678 | INFO     | 452ca9d4 | app.services.export_service:export_run:43 - Exporting run c65977ae-5a5c-4d1a-a7c9-315233920dbb as MARKDOWN
+2026-08-08 00:30:39.117 | INFO     | e9a71ad5 | app.services.export_service:export_run:43 - Exporting run c65977ae-5a5c-4d1a-a7c9-315233920dbb as MARKDOWN
+2026-08-08 00:34:03.328 | INFO     | 6c32464d | app.services.execution_service:start_execution:59 - Starting execution for goal: plan a birthday party inviting my friends sarvesh, pari and janhvi for my birthd
+2026-08-08 00:34:03.328 | INFO     | 6c32464d | app.services.workflow_service:generate_workflow:31 - Generating workflow for goal: plan a birthday party inviting my friends sarvesh, pari and janhvi for my birthd
+2026-08-08 00:35:33.591 | INFO     | 3ec94f7a | app.services.approval_service:submit_approval:50 - Approval submitted for bbdd5274-ec00-4374-9131-c3e1d35f1add: approved=True, feedback=''
+2026-08-08 00:35:33.600 | INFO     | 3ec94f7a | app.services.execution_service:resume_after_approval:156 - Approval received for bbdd5274-ec00-4374-9131-c3e1d35f1add: approved=True
+2026-08-08 00:35:33.630 | INFO     | 6c32464d | app.services.execution_service:_run_graph:350 - Execution bbdd5274-ec00-4374-9131-c3e1d35f1add completed in 89959ms
+2026-08-08 00:35:43.734 | INFO     | dfd5ca7a | app.services.export_service:export_run:43 - Exporting run bbdd5274-ec00-4374-9131-c3e1d35f1add as MARKDOWN
+2026-08-08 00:36:06.392 | INFO     | f5caf7e3 | app.services.export_service:export_run:43 - Exporting run bbdd5274-ec00-4374-9131-c3e1d35f1add as MARKDOWN
+2026-08-08 00:38:14.262 | INFO     | 5e2aa358 | app.services.export_service:export_run:43 - Exporting run bbdd5274-ec00-4374-9131-c3e1d35f1add as MARKDOWN
+2026-08-08 00:45:31.511 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 00:45:32.676 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:48:11.353 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 00:48:12.376 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:48:20.005 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 00:48:20.931 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 00:58:33.531 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 00:58:40.411 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 01:00:30.374 | INFO     | d451084b | app.services.execution_service:start_execution:59 - Starting execution for goal: Analyze quantum computing impact on modern cryptography
+2026-08-08 01:00:30.374 | INFO     | d451084b | app.services.workflow_service:generate_workflow:31 - Generating workflow for goal: Analyze quantum computing impact on modern cryptography
+2026-08-08 01:02:27.896 | INFO     | ee5a12a7 | app.services.approval_service:submit_approval:50 - Approval submitted for 354b966d-5015-4e66-991c-5f47b69f38a9: approved=True, feedback=''
+2026-08-08 01:02:27.907 | INFO     | ee5a12a7 | app.services.execution_service:resume_after_approval:156 - Approval received for 354b966d-5015-4e66-991c-5f47b69f38a9: approved=True
+2026-08-08 01:02:27.952 | INFO     | d451084b | app.services.execution_service:_run_graph:350 - Execution 354b966d-5015-4e66-991c-5f47b69f38a9 completed in 117224ms
+2026-08-08 01:02:30.435 | INFO     | 3297c729 | app.services.export_service:export_run:43 - Exporting run 354b966d-5015-4e66-991c-5f47b69f38a9 as MARKDOWN
+2026-08-08 01:02:52.533 | INFO     | 185dde72 | app.services.export_service:export_run:43 - Exporting run 354b966d-5015-4e66-991c-5f47b69f38a9 as MARKDOWN
+2026-08-08 01:07:21.216 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 01:07:25.054 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 01:08:10.721 | INFO     | 382e7361 | app.services.execution_service:start_execution:59 - Starting execution for goal: Analyze quantum computing impact on modern cryptography
+2026-08-08 01:08:10.722 | INFO     | 382e7361 | app.services.workflow_service:generate_workflow:31 - Generating workflow for goal: Analyze quantum computing impact on modern cryptography
+2026-08-08 01:08:13.906 | INFO     | 3b25d97c | app.services.approval_service:submit_approval:50 - Approval submitted for 10da4d52-6d4d-4c1c-98a6-6afe99df8948: approved=True, feedback=''
+2026-08-08 01:08:13.916 | INFO     | 3b25d97c | app.services.execution_service:resume_after_approval:156 - Approval received for 10da4d52-6d4d-4c1c-98a6-6afe99df8948: approved=True
+2026-08-08 01:08:13.953 | INFO     | 382e7361 | app.services.execution_service:_run_graph:350 - Execution 10da4d52-6d4d-4c1c-98a6-6afe99df8948 completed in 2890ms
+2026-08-08 01:08:16.839 | INFO     | c0d0f6b9 | app.services.export_service:export_run:43 - Exporting run 10da4d52-6d4d-4c1c-98a6-6afe99df8948 as MARKDOWN
+2026-08-08 01:21:05.430 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 01:21:10.660 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 04:12:31.377 | INFO     | 8930fab1 | app.services.execution_service:start_execution:59 - Starting execution for goal: Input:
+
+"Reply to this email politely."
+
+Workflow:
+
+User
+   │
+   ▼
+Read Email
+  
+2026-08-08 04:12:31.378 | INFO     | 8930fab1 | app.services.workflow_service:generate_workflow:31 - Generating workflow for goal: Input:
+
+"Reply to this email politely."
+
+Workflow:
+
+User
+   │
+   ▼
+Read Email
+  
+2026-08-08 04:14:39.669 | INFO     | 37a34ac8 | app.services.approval_service:submit_approval:50 - Approval submitted for 677ae951-4d06-4916-b871-d28a22e3abfa: approved=True, feedback=''
+2026-08-08 04:14:39.680 | INFO     | 37a34ac8 | app.services.execution_service:resume_after_approval:156 - Approval received for 677ae951-4d06-4916-b871-d28a22e3abfa: approved=True
+2026-08-08 04:14:39.711 | INFO     | 8930fab1 | app.services.execution_service:_run_graph:350 - Execution 677ae951-4d06-4916-b871-d28a22e3abfa completed in 127978ms
+2026-08-08 04:14:43.570 | INFO     | 360beb8e | app.services.export_service:export_run:43 - Exporting run 677ae951-4d06-4916-b871-d28a22e3abfa as MARKDOWN
+2026-08-08 04:19:46.515 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 04:19:48.119 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 04:20:12.045 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 04:20:13.096 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 04:20:19.284 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 04:20:20.322 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 04:20:34.842 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 04:20:35.901 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 04:20:58.506 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 04:20:59.555 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 04:23:12.035 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 04:23:35.081 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 04:25:53.243 | INFO     | 81e7419a | app.services.execution_service:start_execution:59 - Starting execution for goal: help me draft an email to my boss regarding leave application for tomorroe on ac
+2026-08-08 04:25:53.243 | INFO     | 81e7419a | app.services.workflow_service:generate_workflow:31 - Generating workflow for goal: help me draft an email to my boss regarding leave application for tomorroe on ac
+2026-08-08 04:28:18.186 | INFO     | a9088a54 | app.services.approval_service:submit_approval:50 - Approval submitted for 79a005fc-40be-4cd7-bdb8-ca8d890ed88d: approved=True, feedback=''
+2026-08-08 04:28:18.199 | INFO     | a9088a54 | app.services.execution_service:resume_after_approval:156 - Approval received for 79a005fc-40be-4cd7-bdb8-ca8d890ed88d: approved=True
+2026-08-08 04:28:18.230 | INFO     | 81e7419a | app.services.execution_service:_run_graph:350 - Execution 79a005fc-40be-4cd7-bdb8-ca8d890ed88d completed in 144642ms
+2026-08-08 04:28:24.815 | INFO     | 7c1ada4e | app.services.export_service:export_run:43 - Exporting run 79a005fc-40be-4cd7-bdb8-ca8d890ed88d as MARKDOWN
+2026-08-08 04:28:48.530 | INFO     | 9eb43be0 | app.services.export_service:export_run:43 - Exporting run 79a005fc-40be-4cd7-bdb8-ca8d890ed88d as MARKDOWN
