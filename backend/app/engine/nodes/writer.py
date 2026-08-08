@@ -22,7 +22,7 @@ def _get_provider() -> BaseLLMProvider:
     from app.ai.registry import ProviderRegistry
 
     return ProviderRegistry.get_default(
-        settings.google_api_key,
+        settings.active_api_key,
         settings.default_model,
         settings.default_temperature,
         settings.default_max_tokens,
@@ -86,7 +86,7 @@ async def writer_node(state: ForgeState) -> dict:
     try:
         provider = _get_provider()
         if not provider.api_key:
-            raise ValueError("Google API key is not configured")
+            raise ValueError("API key is not configured (set GROQ_API_KEY in .env)")
 
         prompt = WRITER_USER_PROMPT.format(
             plan_title=plan.get("title", ""),

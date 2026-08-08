@@ -239,3 +239,96 @@ Read Email
 2026-08-08 04:28:18.230 | INFO     | 81e7419a | app.services.execution_service:_run_graph:350 - Execution 79a005fc-40be-4cd7-bdb8-ca8d890ed88d completed in 144642ms
 2026-08-08 04:28:24.815 | INFO     | 7c1ada4e | app.services.export_service:export_run:43 - Exporting run 79a005fc-40be-4cd7-bdb8-ca8d890ed88d as MARKDOWN
 2026-08-08 04:28:48.530 | INFO     | 9eb43be0 | app.services.export_service:export_run:43 - Exporting run 79a005fc-40be-4cd7-bdb8-ca8d890ed88d as MARKDOWN
+2026-08-08 08:04:54.709 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 08:06:29.157 | INFO     | 55b32d8e | app.services.execution_service:start_execution:59 - Starting execution for goal: make a hackathon organiser team architecture
+2026-08-08 08:06:29.158 | INFO     | 55b32d8e | app.services.workflow_service:generate_workflow:31 - Generating workflow for goal: make a hackathon organiser team architecture
+2026-08-08 08:06:34.663 | INFO     | a6efc7ef | app.services.approval_service:submit_approval:50 - Approval submitted for fca6ed93-9295-4a97-b1ce-dce7ab8bb899: approved=True, feedback=''
+2026-08-08 08:06:34.677 | INFO     | a6efc7ef | app.services.execution_service:resume_after_approval:156 - Approval received for fca6ed93-9295-4a97-b1ce-dce7ab8bb899: approved=True
+2026-08-08 08:06:34.718 | INFO     | 55b32d8e | app.services.execution_service:_run_graph:350 - Execution fca6ed93-9295-4a97-b1ce-dce7ab8bb899 completed in 5209ms
+2026-08-08 08:06:39.690 | INFO     | 196bd253 | app.services.export_service:export_run:43 - Exporting run fca6ed93-9295-4a97-b1ce-dce7ab8bb899 as MARKDOWN
+2026-08-08 08:08:50.478 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 08:08:51.925 | INFO     |        - | app.main:lifespan:44 - ForgeAI v1.0.0 starting on 0.0.0.0:8000
+2026-08-08 08:08:57.887 | INFO     |        - | app.main:lifespan:53 - ForgeAI shutting down
+2026-08-08 08:08:59.084 | INFO     |        - | app.main:lifespan:48 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:08:59.084 | INFO     |        - | app.main:lifespan:54 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=gemini-3.5-flash
+2026-08-08 08:10:28.411 | INFO     |        - | app.main:lifespan:48 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:10:28.411 | INFO     |        - | app.main:lifespan:54 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=gemini-3.5-flash
+2026-08-08 08:15:30.962 | INFO     | a2ecf277 | app.services.execution_service:start_execution:59 - Starting execution for goal: make a hackathon planning team architecture
+2026-08-08 08:15:30.962 | INFO     | a2ecf277 | app.services.workflow_service:generate_workflow:31 - Generating workflow for goal: make a hackathon planning team architecture
+2026-08-08 08:15:34.826 | INFO     | af2f6b0e | app.services.approval_service:submit_approval:50 - Approval submitted for d5d0f598-ef16-477c-a138-20f9fbf83f9d: approved=True, feedback=''
+2026-08-08 08:15:34.846 | INFO     | af2f6b0e | app.services.execution_service:resume_after_approval:156 - Approval received for d5d0f598-ef16-477c-a138-20f9fbf83f9d: approved=True
+2026-08-08 08:15:34.904 | INFO     | a2ecf277 | app.services.execution_service:_run_graph:350 - Execution d5d0f598-ef16-477c-a138-20f9fbf83f9d completed in 3580ms
+2026-08-08 08:15:38.211 | INFO     | b8ad40b4 | app.services.export_service:export_run:43 - Exporting run d5d0f598-ef16-477c-a138-20f9fbf83f9d as MARKDOWN
+2026-08-08 08:19:50.196 | INFO     |        - | app.main:lifespan:64 - ForgeAI shutting down
+2026-08-08 08:19:51.500 | INFO     |        - | app.main:lifespan:48 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:19:51.500 | INFO     |        - | app.main:lifespan:54 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=gemini-3.5-flash
+2026-08-08 08:20:02.058 | INFO     |        - | app.main:lifespan:64 - ForgeAI shutting down
+2026-08-08 08:20:03.014 | INFO     |        - | app.main:lifespan:48 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:20:03.014 | INFO     |        - | app.main:lifespan:54 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=gemini-3.5-flash
+2026-08-08 08:20:11.919 | INFO     |        - | app.main:lifespan:64 - ForgeAI shutting down
+2026-08-08 08:20:12.911 | INFO     |        - | app.main:lifespan:48 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:20:12.911 | INFO     |        - | app.main:lifespan:54 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=gemini-3.5-flash
+2026-08-08 08:20:34.190 | INFO     |        - | app.main:lifespan:64 - ForgeAI shutting down
+2026-08-08 08:20:35.183 | INFO     |        - | app.main:lifespan:48 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:20:35.183 | INFO     |        - | app.main:lifespan:54 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=gemini-3.5-flash
+2026-08-08 08:20:35.297 | INFO     |        - | app.main:lifespan:64 - ForgeAI shutting down
+2026-08-08 08:20:36.281 | INFO     |        - | app.main:lifespan:48 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:20:36.282 | INFO     |        - | app.main:lifespan:54 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=gemini-3.5-flash
+2026-08-08 08:20:36.386 | INFO     |        - | app.main:lifespan:64 - ForgeAI shutting down
+2026-08-08 08:20:37.418 | INFO     |        - | app.main:lifespan:48 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:20:37.418 | INFO     |        - | app.main:lifespan:54 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=gemini-3.5-flash
+2026-08-08 08:20:37.534 | INFO     |        - | app.main:lifespan:64 - ForgeAI shutting down
+2026-08-08 08:20:38.499 | INFO     |        - | app.main:lifespan:48 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:20:38.499 | INFO     |        - | app.main:lifespan:54 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=gemini-3.5-flash
+2026-08-08 08:20:48.599 | INFO     |        - | app.main:lifespan:64 - ForgeAI shutting down
+2026-08-08 08:20:49.682 | INFO     |        - | app.main:lifespan:49 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:20:49.682 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=gemini-3.5-flash
+2026-08-08 08:22:00.018 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:22:01.035 | INFO     |        - | app.main:lifespan:49 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:22:01.035 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:22:01.583 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:22:02.609 | INFO     |        - | app.main:lifespan:49 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:22:02.610 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:22:02.719 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:22:03.700 | INFO     |        - | app.main:lifespan:49 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:22:03.700 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:22:03.810 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:22:04.883 | INFO     |        - | app.main:lifespan:49 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:22:04.883 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:25:09.723 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:25:10.959 | INFO     |        - | app.main:lifespan:49 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:25:10.960 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:25:13.780 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:25:14.818 | INFO     |        - | app.main:lifespan:49 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:25:14.818 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:25:17.757 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:25:18.684 | INFO     |        - | app.main:lifespan:49 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:25:18.684 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:25:21.401 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:25:22.300 | INFO     |        - | app.main:lifespan:49 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:25:22.300 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:25:33.608 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:25:34.548 | INFO     |        - | app.main:lifespan:49 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:25:34.548 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:25:37.833 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:25:38.818 | INFO     |        - | app.main:lifespan:49 - Google API key loaded: AQ.Ab8...yQ9w
+2026-08-08 08:25:38.818 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:27:23.192 | INFO     |        - | app.main:lifespan:49 - Groq API key loaded: gsk_0s...uBec
+2026-08-08 08:27:23.193 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:27:57.172 | INFO     |        - | app.main:lifespan:65 - ForgeAI shutting down
+2026-08-08 08:28:16.909 | INFO     |        - | app.main:lifespan:49 - Groq API key loaded: gsk_0s...uBec
+2026-08-08 08:28:16.910 | INFO     |        - | app.main:lifespan:55 - ForgeAI v1.0.0 starting on 0.0.0.0:8000 | model=llama-3.3-70b-versatile
+2026-08-08 08:29:31.495 | INFO     | 56ec28a2 | app.services.execution_service:start_execution:59 - Starting execution for goal: make a hackathon planning team architecture v2
+2026-08-08 08:29:31.495 | INFO     | 56ec28a2 | app.services.workflow_service:generate_workflow:31 - Generating workflow for goal: make a hackathon planning team architecture v2
+2026-08-08 08:31:09.844 | INFO     | 5405800c | app.services.approval_service:submit_approval:50 - Approval submitted for a5c1efbb-d7e1-4aac-9e84-88ed98ebb652: approved=True, feedback=''
+2026-08-08 08:31:09.855 | INFO     | 5405800c | app.services.execution_service:resume_after_approval:156 - Approval received for a5c1efbb-d7e1-4aac-9e84-88ed98ebb652: approved=True
+2026-08-08 08:31:09.897 | INFO     | 56ec28a2 | app.services.execution_service:_run_graph:350 - Execution a5c1efbb-d7e1-4aac-9e84-88ed98ebb652 completed in 98051ms
+2026-08-08 08:31:12.333 | INFO     | 0b3face2 | app.services.export_service:export_run:43 - Exporting run a5c1efbb-d7e1-4aac-9e84-88ed98ebb652 as MARKDOWN
+2026-08-08 08:31:37.351 | INFO     | 2d5fb646 | app.services.export_service:export_run:43 - Exporting run a5c1efbb-d7e1-4aac-9e84-88ed98ebb652 as MARKDOWN
+2026-08-08 08:34:09.205 | INFO     | 98583235 | app.services.execution_service:start_execution:59 - Starting execution for goal: plan a birthday event for shubh inviting his friends preshit, pari, sarvesh, jan
+2026-08-08 08:34:09.205 | INFO     | 98583235 | app.services.workflow_service:generate_workflow:31 - Generating workflow for goal: plan a birthday event for shubh inviting his friends preshit, pari, sarvesh, jan
+2026-08-08 08:34:28.757 | INFO     | 7961ac56 | app.services.approval_service:submit_approval:50 - Approval submitted for 1a825380-7b11-4160-8542-d263a22d8611: approved=True, feedback=''
+2026-08-08 08:34:28.763 | INFO     | 7961ac56 | app.services.execution_service:resume_after_approval:156 - Approval received for 1a825380-7b11-4160-8542-d263a22d8611: approved=True
+2026-08-08 08:34:28.793 | INFO     | 98583235 | app.services.execution_service:_run_graph:350 - Execution 1a825380-7b11-4160-8542-d263a22d8611 completed in 19258ms
+2026-08-08 08:34:31.463 | INFO     | 0ebf4062 | app.services.export_service:export_run:43 - Exporting run 1a825380-7b11-4160-8542-d263a22d8611 as MARKDOWN
+2026-08-08 08:34:38.694 | INFO     | 1534cbcd | app.services.export_service:export_run:43 - Exporting run 1a825380-7b11-4160-8542-d263a22d8611 as MARKDOWN

@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Type
 
 from app.ai.base import BaseLLMProvider
-from app.ai.gemini import GeminiProvider
+from app.ai.groq_provider import GroqProvider
 
 
 class ProviderRegistry:
@@ -20,23 +20,10 @@ class ProviderRegistry:
         provider_class: Type[BaseLLMProvider],
         model_string: str | None = None,
     ) -> None:
-        """Register a provider class under *name*.
-
-        Parameters
-        ----------
-        name:
-            Lookup key (e.g. ``"gemini-2.5-flash"``).
-        provider_class:
-            The concrete class to instantiate.
-        model_string:
-            The ``model`` argument forwarded to the class constructor.
-            Defaults to *name* when omitted.
-        """
         cls._providers[name] = (provider_class, model_string or name)
 
     @classmethod
     def get(cls, name: str, **kwargs) -> BaseLLMProvider:
-        """Instantiate and return the provider registered under *name*."""
         if name not in cls._providers:
             raise KeyError(
                 f"Unknown provider '{name}'. "
@@ -50,7 +37,7 @@ class ProviderRegistry:
     def get_default(
         cls,
         api_key: str,
-        model: str = "gemini-3.5-flash",
+        model: str = "llama-3.3-70b-versatile",
         temperature: float = 0.7,
         max_tokens: int = 8192,
     ) -> BaseLLMProvider:
@@ -64,16 +51,21 @@ class ProviderRegistry:
 
     @classmethod
     def available(cls) -> list[str]:
-        """Return the list of registered provider names."""
         return list(cls._providers.keys())
 
 
-# Pre-register all supported Gemini variants.
-# Gemini 3.x (current stable)
-ProviderRegistry.register("gemini-3.6-flash", GeminiProvider, "gemini-3.6-flash")
-ProviderRegistry.register("gemini-3.5-flash", GeminiProvider, "gemini-3.5-flash")
-ProviderRegistry.register("gemini-3.5-flash-lite", GeminiProvider, "gemini-3.5-flash-lite")
-# Gemini 2.5 (shutdown Oct 2026; 2.5-flash returning 404 since July 2026)
-# Kept registered for backward compat but prefer 3.x models.
-ProviderRegistry.register("gemini-2.5-flash", GeminiProvider, "gemini-2.5-flash")
-ProviderRegistry.register("gemini-2.5-pro", GeminiProvider, "gemini-2.5-pro")
+# --- Groq models (default) ---
+ProviderRegistry.register("llama-3.3-70b-versatile", GroqProvider)
+ProviderRegistry.register("llama-3.1-8b-instant", GroqProvider)
+ProviderRegistry.register("openai/gpt-oss-120b", GroqProvider)
+ProviderRegistry.register("openai/gpt-oss-20b", GroqProvider)
+
+# --- Gemini models (kept for future use) ---
+try:
+    from app.ai.gemini import GeminiProvider
+
+    ProviderRegistry.register("gemini-3.5-flash", GeminiProvider)
+    ProviderRegistry.register("gemini-3.6-flash", GeminiProvider)
+    ProviderRegistry.register("gemini-2.5-flash", GeminiProvider)
+except ImportError:
+    pass

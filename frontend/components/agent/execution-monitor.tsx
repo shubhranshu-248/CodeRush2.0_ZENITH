@@ -356,7 +356,7 @@ export const ExecutionMonitor: React.FC<ExecutionMonitorProps> = ({
           <div className="grid grid-cols-3 gap-2 mt-2">
             <div className="p-2 rounded-xl bg-white/[0.02] border border-white/[0.06] flex items-center justify-between text-xs hover:border-white/[0.1] transition-colors">
               <span className="text-gray-500 text-[10px]">LLM Provider</span>
-              <span className="font-mono text-emerald-400 font-semibold text-[11px]">Gemini 1.5 Pro</span>
+              <span className="font-mono text-emerald-400 font-semibold text-[11px]">Llama 3.3 70B</span>
             </div>
             <div className="p-2 rounded-xl bg-white/[0.02] border border-white/[0.06] flex items-center justify-between text-xs hover:border-white/[0.1] transition-colors">
               <span className="text-gray-500 text-[10px]">Checkpointer</span>

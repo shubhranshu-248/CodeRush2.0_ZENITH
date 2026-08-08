@@ -22,7 +22,7 @@ def _get_provider() -> BaseLLMProvider:
     from app.ai.registry import ProviderRegistry
 
     return ProviderRegistry.get_default(
-        settings.google_api_key,
+        settings.active_api_key,
         settings.default_model,
         settings.default_temperature,
         settings.default_max_tokens,
@@ -99,7 +99,7 @@ async def planner_node(state: ForgeState) -> dict:
     try:
         provider = _get_provider()
         if not provider.api_key:
-            raise ValueError("Google API key is not configured")
+            raise ValueError("API key is not configured (set GROQ_API_KEY in .env)")
 
         prompt = PLANNER_USER_PROMPT.format(goal=goal)
 
@@ -110,9 +110,9 @@ async def planner_node(state: ForgeState) -> dict:
         tokens_used = raw_response.tokens_used
         cost = raw_response.cost
 
-        from app.ai.gemini import _extract_json
+        from app.ai.utils import extract_json
 
-        plan = _extract_json(raw_response.content)
+        plan = extract_json(raw_response.content)
 
         if "tasks" not in plan:
             raise ValueError("Plan missing 'tasks' key")

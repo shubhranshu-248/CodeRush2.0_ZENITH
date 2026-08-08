@@ -984,7 +984,7 @@ export default function LandingPage() {
             </span>
             <span className="text-[12px] text-neutral-600">
               Powered by{" "}
-              <span className="text-emerald-400/60">Gemini AI</span>
+              <span className="text-emerald-400/60">Groq + Llama</span>
               {" & "}
               <span className="text-emerald-400/60">Next.js</span>
             </span>

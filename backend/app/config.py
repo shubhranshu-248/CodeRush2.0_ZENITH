@@ -1,9 +1,8 @@
 """Application configuration using pydantic-settings."""
 
-import os
 from functools import lru_cache
 
-from pydantic import model_validator
+from pydantic import AliasChoices, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -17,8 +16,18 @@ class Settings(BaseSettings):
     port: int = 8000
 
     database_url: str = "sqlite+aiosqlite:///data/forgeai.db"
-    google_api_key: str = ""
-    default_model: str = "gemini-3.5-flash"
+
+    # Accepts GROQ_API_KEY (primary) or GOOGLE_API_KEY / GEMINI_API_KEY (legacy)
+    groq_api_key: str = Field(
+        default="",
+        validation_alias=AliasChoices("GROQ_API_KEY"),
+    )
+    google_api_key: str = Field(
+        default="",
+        validation_alias=AliasChoices("GOOGLE_API_KEY", "GEMINI_API_KEY"),
+    )
+
+    default_model: str = "llama-3.3-70b-versatile"
     default_temperature: float = 0.7
     default_max_tokens: int = 8192
     checkpoint_db_path: str = "data/checkpoints.db"
@@ -35,12 +44,10 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    @model_validator(mode="after")
-    def _fallback_api_key(self) -> "Settings":
-        """Accept GEMINI_API_KEY as a fallback for GOOGLE_API_KEY."""
-        if not self.google_api_key:
-            self.google_api_key = os.getenv("GEMINI_API_KEY", "")
-        return self
+    @property
+    def active_api_key(self) -> str:
+        """Return whichever API key is configured (Groq preferred)."""
+        return self.groq_api_key or self.google_api_key
 
 
 @lru_cache

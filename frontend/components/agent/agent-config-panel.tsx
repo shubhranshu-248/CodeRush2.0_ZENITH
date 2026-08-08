@@ -22,14 +22,14 @@ const AGENT_CONFIGS: Record<string, {
   tools: string[];
   role: string;
 }> = {
-  planner: { model: "gemini-3.5-flash", fallback: "gemini-3.5-flash-lite", temperature: 0.3, maxTokens: 4096, timeout: 30, budget: "$0.05", tools: ["goal_parser", "graph_compiler"], role: "Decomposes goal into subtasks, assigns agents, builds execution DAG" },
-  researcher: { model: "gemini-3.5-flash", fallback: "gemini-3.5-flash-lite", temperature: 0.5, maxTokens: 8192, timeout: 60, budget: "$0.10", tools: ["web_search", "doc_retrieval", "summarizer"], role: "Gathers information from multiple sources, synthesizes findings" },
-  writer: { model: "gemini-3.5-flash", fallback: "gemini-3.5-flash-lite", temperature: 0.7, maxTokens: 16384, timeout: 45, budget: "$0.08", tools: ["text_generator", "citation_formatter"], role: "Produces structured output from research findings with citations" },
-  verifier: { model: "gemini-3.5-flash", fallback: "gemini-3.5-flash-lite", temperature: 0.1, maxTokens: 4096, timeout: 30, budget: "$0.04", tools: ["fact_checker", "consistency_validator"], role: "Validates accuracy, checks for hallucinations and inconsistencies" },
+  planner: { model: "llama-3.3-70b-versatile", fallback: "llama-3.1-8b-instant", temperature: 0.3, maxTokens: 4096, timeout: 30, budget: "$0.05", tools: ["goal_parser", "graph_compiler"], role: "Decomposes goal into subtasks, assigns agents, builds execution DAG" },
+  researcher: { model: "llama-3.3-70b-versatile", fallback: "llama-3.1-8b-instant", temperature: 0.5, maxTokens: 8192, timeout: 60, budget: "$0.10", tools: ["web_search", "doc_retrieval", "summarizer"], role: "Gathers information from multiple sources, synthesizes findings" },
+  writer: { model: "llama-3.3-70b-versatile", fallback: "llama-3.1-8b-instant", temperature: 0.7, maxTokens: 16384, timeout: 45, budget: "$0.08", tools: ["text_generator", "citation_formatter"], role: "Produces structured output from research findings with citations" },
+  verifier: { model: "llama-3.3-70b-versatile", fallback: "llama-3.1-8b-instant", temperature: 0.1, maxTokens: 4096, timeout: 30, budget: "$0.04", tools: ["fact_checker", "consistency_validator"], role: "Validates accuracy, checks for hallucinations and inconsistencies" },
   approval: { model: "—", fallback: "—", temperature: 0, maxTokens: 0, timeout: 0, budget: "$0.00", tools: ["human_review_gate"], role: "Human-in-the-loop checkpoint for quality assurance" },
 };
 
-const MODEL_OPTIONS = ["gemini-3.5-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-3.1-pro"];
+const MODEL_OPTIONS = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant", "openai/gpt-oss-120b", "openai/gpt-oss-20b"];
 
 const ConfigRow: React.FC<{ icon: React.ReactNode; label: string; value: string | number; mono?: boolean }> = ({ icon, label, value, mono = false }) => (
   <div className="flex items-center justify-between py-2 border-b border-white/[0.05] last:border-0">

@@ -6,7 +6,9 @@ app/main.py
 app/ai/__init__.py
 app/ai/base.py
 app/ai/gemini.py
+app/ai/groq_provider.py
 app/ai/registry.py
+app/ai/utils.py
 app/ai/prompts/__init__.py
 app/ai/prompts/planner.py
 app/ai/prompts/researcher.py

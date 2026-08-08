@@ -41,11 +41,23 @@ async def lifespan(app: FastAPI):
 
     from loguru import logger
 
+    # Log API key status so misconfiguration is immediately visible
+    key = settings.active_api_key
+    if key:
+        masked = f"{key[:6]}...{key[-4:]}" if len(key) > 10 else "***"
+        provider = "Groq" if settings.groq_api_key else "Google"
+        logger.info("{provider} API key loaded: {masked}", provider=provider, masked=masked)
+    else:
+        logger.warning(
+            "No API key found! Set GROQ_API_KEY in .env"
+        )
+
     logger.info(
-        "ForgeAI v{version} starting on {host}:{port}",
+        "ForgeAI v{version} starting on {host}:{port} | model={model}",
         version=settings.app_version,
         host=settings.host,
         port=settings.port,
+        model=settings.default_model,
     )
 
     yield

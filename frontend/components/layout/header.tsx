@@ -84,7 +84,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="hidden md:flex items-center space-x-2.5 pl-4 border-l border-white/[0.06]">
           <div className="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-[11px] text-gray-400 hover:border-white/[0.12] hover:text-gray-300 transition-all cursor-default">
             <Cpu className="w-3.5 h-3.5 text-indigo-400" />
-            <span className="font-mono text-gray-300 font-medium">Gemini 3.5 Flash</span>
+            <span className="font-mono text-gray-300 font-medium">Llama 3.3 70B</span>
           </div>
 
           {/* Mode Toggle — animated pill */}

@@ -13,6 +13,7 @@ dependencies = [
     "alembic>=1.14",
     "langgraph>=0.4",
     "langgraph-checkpoint-sqlite>=2.0",
+    "langchain-groq>=0.3",
     "langchain-google-genai>=2.1",
     "langchain-core>=0.3",
     "httpx>=0.28",

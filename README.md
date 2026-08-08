@@ -33,8 +33,8 @@ The entire pipeline streams progress via Server-Sent Events, with every node tra
 │  └─────────┘  └──────────┘  └───────────────────┘  │
 │                                      │              │
 │  ┌──────────────┐  ┌────────────────▼───────────┐  │
-│  │  SQLAlchemy   │  │  Google Gemini 3.5 Flash   │  │
-│  │  + aiosqlite  │  │  via langchain-google-genai│  │
+│  │  SQLAlchemy   │  │  Groq (Llama 3.3 70B)   │  │
+│  │  + aiosqlite  │  │  via langchain-groq│  │
 │  └──────────────┘  └───────────────────────────┘  │
 │  Port 8000                                          │
 └─────────────────────────────────────────────────────┘
@@ -45,7 +45,7 @@ The entire pipeline streams progress via Server-Sent Events, with every node tra
 ### Backend
 - **Python 3.10+** with **FastAPI** and async throughout
 - **LangGraph** — StateGraph with parallel fan-out, conditional edges, human-in-the-loop interrupts, and checkpointing
-- **Google Gemini 3.5 Flash** via `langchain-google-genai` (provider-agnostic design supports future OpenAI/Anthropic swap)
+- **Groq (Llama 3.3 70B)** via `langchain-google-genai` (provider-agnostic design supports provider-agnostic — Gemini/OpenAI/Anthropic can be swapped in)
 - **SQLAlchemy 2.x** + **aiosqlite** with Alembic migrations
 - **SSE (Server-Sent Events)** via `sse-starlette` for real-time execution streaming
 - **Pydantic v2** for all request/response validation
@@ -127,7 +127,7 @@ CodeRush2.0_ZENITH/
 
 - **Python 3.10+**
 - **Node.js 18+**
-- **Google Gemini API key** — get one free at [Google AI Studio](https://aistudio.google.com/apikey)
+- **Groq API key** — get one free at [Groq Console](https://console.groq.com/keys)
 
 ### Setup
 
@@ -140,7 +140,7 @@ CodeRush2.0_ZENITH/
 2. **Configure the API key**
    ```bash
    # backend/.env
-   GOOGLE_API_KEY=your_gemini_api_key_here
+   GROQ_API_KEY=your_groq_api_key_here
    ```
 
 3. **Start both servers** (Windows)
@@ -198,7 +198,7 @@ docker-compose up --build
 
 **Execution Replay** — Re-watch any past execution step by step from persisted state.
 
-**Provider-Agnostic AI Layer** — Abstract `BaseLLMProvider` with a registry pattern. Gemini is the default; OpenAI/Anthropic can be added without touching business logic.
+**Provider-Agnostic AI Layer** — Abstract `BaseLLMProvider` with a registry pattern. Groq (Llama 3.3 70B) is the default; OpenAI/Anthropic can be added without touching business logic.
 
 ## Configuration
 
@@ -206,8 +206,8 @@ All configuration is via environment variables (or `backend/.env`):
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `GOOGLE_API_KEY` | — | Google Gemini API key (required) |
-| `DEFAULT_MODEL` | `gemini-3.5-flash` | Gemini model to use |
+| `GROQ_API_KEY` | — | Groq API key (**required**) |
+| `DEFAULT_MODEL` | `llama-3.3-70b-versatile` | LLM model to use |
 | `DEFAULT_TEMPERATURE` | `0.7` | LLM temperature |
 | `DEFAULT_MAX_TOKENS` | `8192` | Max output tokens |
 | `DATABASE_URL` | `sqlite+aiosqlite:///data/forgeai.db` | Database connection string |

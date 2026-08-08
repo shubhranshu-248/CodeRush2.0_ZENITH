@@ -12,6 +12,7 @@ Requires-Dist: aiosqlite>=0.20
 Requires-Dist: alembic>=1.14
 Requires-Dist: langgraph>=0.4
 Requires-Dist: langgraph-checkpoint-sqlite>=2.0
+Requires-Dist: langchain-groq>=0.3
 Requires-Dist: langchain-google-genai>=2.1
 Requires-Dist: langchain-core>=0.3
 Requires-Dist: httpx>=0.28
